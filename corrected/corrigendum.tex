@@ -1,0 +1,53 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,array,amsmath}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\input{numbers.tex}
+
+\title{\bfseries Corrigendum (draft)\\[2pt]\large Quantifying the Deorbit Time of CubeSats: A Comparative Analysis of Drag Sails, Propulsion, and Tethers}
+\author{Aisha Shermatova}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent While preparing code to reproduce the results of the above article (Axiom Young Research, vol.~2), the author found the following errors in the published text. The central conclusion --- that a drag sail is the only one of the three technologies that meets the 25-year guideline across 400--800\,km, and the technology ranking --- is unchanged.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\small
+\begin{tabular}{@{}p{3.4cm}p{5.4cm}p{6.2cm}@{}}
+\toprule
+\textbf{Location} & \textbf{As published} & \textbf{Corrected} \\
+\midrule
+Eq.~(1) constants & $H=50$\,km, $K=2.5\times10^{-5}$ & $H=100$\,km, $K=2.5\times10^{-3}$ \\
+Table 1, $A/m$ (drag sail) & 0.468 & 0.465 (= 2.00\,m$^2$ / 4.30\,kg) \\
+Table 1, $A/m$ (EDT) & 0.024 & 0.0222 (= 0.10\,m$^2$ / 4.50\,kg) \\
+Table 1, $A/m$ (propulsion) & 0.0058 & 0.00577 (rounding only) \\
+Table 3, EDT (400--800\,km) & 5.8, 16.0, 43.5, 118.0, 320.0 & 6.1, 16.7, \EDTSix, 123.4, 335.4 \\
+Table 3, propulsion & 24.0, 66.1, 179.5, 487.1, 1320.0 & 23.7, 64.3, \PropSix, 475.2, 1291.7 \\
+Table 3, drag sail & 0.3, 0.8, 2.2, 5.9, 16.0 & unchanged \\
+EDT / propulsion above guideline at 600\,km & 74\% / 618\% & \EDTover\% / \PROPover\% \\
+Fig.~4 mean deorbit time & 75.1 years & \MeanSix{} years \\
+Fig.~2 caption, EDT exceeds guideline & above $\approx$500\,km & above $\approx$\EDTcross\,km (propulsion: $\approx$\PROPcross\,km) \\
+Sec.~1.3, $K\pm15\%$ at 600\,km & ``$\pm0.3$ to 2 years'' & $\pm\KsensSail$ yr (drag sail), $\pm\KsensEDT$ yr (EDT), $\pm\KsensProp$ yr (propulsion) \\
+Sec.~1.3, $\pm10\%$ in $A/m$ & 8--12\% & 9--11\% \\
+Figs.~1 and 2 captions & residual histogram labelled Fig.~1; altitude plot labelled Fig.~2 (images in swapped positions) & captions to be matched to images \\
+Introduction, ``millions of debris fragments'' & unreferenced estimate & more than 1.2 million objects larger than 1\,cm (ESA Space Environment Report 2025) \\
+In-text citations & numbers up to [24]; reference list has 16 entries & citations re-linked to a numbered list of 18 references (two sources added) \\
+Eq.~(1), units of $K$ & year$\cdot$kg/m$^2$ & year$\cdot$m$^2$/kg (dimensionally consistent with Eq.~1) \\
+Table 2, GRBAlpha observed lifetime & 2.0 yr & $\approx$4.2 yr (launched March 2021, re-entered June 2025) \\
+Table 2, DhabiSat observed lifetime & 1.4 yr & $\approx$2.6 yr (re-entered January 2024) \\
+Table 2, PERSEUS-M1 & 475\,km, decayed after 3.2 yr & launched 2014 into $\sim$620\,km, still in orbit (now an in-orbit case) \\
+Reliability and compliance statements (Abstract, Sec.~3--5) & drag sail ``most reliable'', ``ensuring compliance'' & limited to modeled passive decay; reliability, cost and regulatory acceptance not modeled \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent\textbf{Table 2 and the validation claim.} The ``predicted lifetime'' column of Table~2 (2.2, 1.25, 3.55, 45.2 and 112.3 years) and the reported mean absolute error of 10.5\% cannot be reproduced from Eq.~(1) with either the published or the corrected constants. In addition, the observed lifetimes of two of the three ``decayed'' satellites and the status of the third were wrong (see the table above). With corrected observations, Eq.~(1) gives \ValModelGRB{} years for GRBAlpha (observed $\approx$4.2) and \ValModelDhabi{} years for DhabiSat (observed $\approx$2.6), an overestimate by a factor of \ValLo{} to \ValHi{}. For the three satellites still in orbit after 12+ years (ESTCube-1, AAUSat-3, PERSEUS-M1) the predictions (\ValModelEst, \ValModelAau{} and \ValModelPerseus{} years) are consistent with observation. The statement that the model was validated to within 10.5\% is withdrawn. The model is retained as a tool for \emph{relative} comparison of the three technologies (their ranking depends only on $A/m$), and absolute times --- in particular that the passive electrodynamic tether and the propulsion system exceed the 25-year guideline at 600\,km --- are model-dependent upper estimates. The residual histogram (Fig.~1) is replaced by a plot of predicted versus observed lifetimes.
+
+\medskip\noindent The corrected tables, figures and the code that generates them are available in the \url{https://github.com/Aisha08032009/deorbit-time-model}.
+
+\end{document}

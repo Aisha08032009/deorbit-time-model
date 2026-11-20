@@ -1,0 +1,16 @@
+system,altitude_km,published_years (Table 3),"model_years (K=0.0025, H=100)"
+Drag Sail,400,0.3,0.293
+Drag Sail,500,0.8,0.798
+Drag Sail,600,2.2,2.168
+Drag Sail,700,5.9,5.894
+Drag Sail,800,16.0,16.023
+Electrodynamic Tether,400,5.8,6.142
+Electrodynamic Tether,500,16.0,16.696
+Electrodynamic Tether,600,43.5,45.386
+Electrodynamic Tether,700,118.0,123.371
+Electrodynamic Tether,800,320.0,335.358
+Propulsion System,400,24.0,23.659
+Propulsion System,500,66.1,64.312
+Propulsion System,600,179.5,174.819
+Propulsion System,700,487.1,475.208
+Propulsion System,800,1320.0,1291.748
